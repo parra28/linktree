@@ -1,0 +1,21 @@
+{
+  "profile": {
+    "handle": "@diegosandie",
+    "name": "DIEGO SÁNCHEZ",
+    "bio": "Entrenamiento, rutas y material. Datos medidos, no promesas.",
+    "accent": "#FF7A1A"
+  },
+  "links": [
+    {
+      "tag": "PROMPT · IA",
+      "title": "Plan de Entrenamiento IA",
+      "subtitle": "Genera tu plan de ciclismo con IA",
+      "url": "https://raw.githubusercontent.com/parra28/prompt_entrenamientos/refs/heads/master/prompt_plan_ciclismo_generico.md"
+    }
+  ],
+  "socials": [
+    { "label": "Instagram", "url": "https://www.instagram.com/diegosandie" },
+    { "label": "TikTok", "url": "https://www.tiktok.com/@diegosandie" },
+    { "label": "Strava", "url": "https://strava.app.link/P5sptosmB4b" }
+  ]
+}

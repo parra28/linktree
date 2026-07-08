@@ -1,0 +1,245 @@
+/* ============================================================
+   Sistema de diseño DSD — @diegosandie · Linktree
+   Tokens tomados de la Guía de Estilo DSD V3.1
+   ============================================================ */
+
+:root {
+  /* Neutros fijos */
+  --asfalto: #17181A;
+  --grava:   #EFEBE3;
+  --crema:   #F4F1EA;
+
+  /* Acento variable (se cambia aquí o desde links.json).
+     Curados: KOM #FF7A1A · Maillot #FFB600 · Sol #FFD84D
+              Terracota #E2603C · Oro viejo #C9A227 · Celeste #57C0A6 */
+  --acc: #FF7A1A;
+
+  /* Opacidades de texto sobre asfalto */
+  --txt:      rgba(244, 241, 234, 1);
+  --txt-2:    rgba(244, 241, 234, 0.55);
+  --txt-tag:  rgba(244, 241, 234, 0.45);
+  --hairline: rgba(244, 241, 234, 0.15);
+
+  --pad: 34px;   /* padding lateral del sistema */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--asfalto);
+  color: var(--txt);
+  font-family: "Archivo", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  padding: 56px 20px 40px;
+}
+
+/* Barra de progreso — firma visual DSD (3px de acento) */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--acc);
+  z-index: 10;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Cabecera ---------- */
+.head {
+  text-align: center;
+  padding-bottom: 34px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.logo { display: inline-flex; margin-bottom: 18px; }
+.logo-img { width: 132px; height: auto; display: inline-block; }
+.logo-fallback { display: none; }
+
+.handle {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--acc);
+  margin-bottom: 14px;
+}
+
+.name {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: clamp(30px, 9vw, 41px);
+  line-height: 1.04;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.bio {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--txt-2);
+  max-width: 34ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Enlaces ---------- */
+.links { display: flex; flex-direction: column; gap: 12px; }
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px var(--pad) 18px 20px;
+  border: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--txt);
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+}
+
+.link .sq {
+  flex: 0 0 auto;
+  width: 8px; height: 8px;
+  background: var(--acc);
+  transition: background .18s ease;
+}
+
+.link .body { flex: 1 1 auto; min-width: 0; }
+
+.link .tag {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--txt-tag);
+  display: block;
+  margin-bottom: 6px;
+  transition: color .18s ease;
+}
+
+.link .title {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.link .subtitle {
+  display: block;
+  margin-top: 5px;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--txt-2);
+  transition: color .18s ease;
+}
+
+.link .arrow {
+  flex: 0 0 auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  color: var(--txt-tag);
+  transition: color .18s ease, transform .18s ease;
+}
+
+/* Hover: se rellena con acento y el texto pasa a asfalto (como el <mark>) */
+.link:hover, .link:focus-visible {
+  background: var(--acc);
+  border-color: var(--acc);
+  color: var(--asfalto);
+  outline: none;
+}
+.link:hover .sq, .link:focus-visible .sq { background: var(--asfalto); }
+.link:hover .tag, .link:focus-visible .tag,
+.link:hover .subtitle, .link:focus-visible .subtitle,
+.link:hover .arrow, .link:focus-visible .arrow { color: var(--asfalto); }
+.link:hover .arrow, .link:focus-visible .arrow { transform: translateX(3px); }
+
+/* CTA — píldora de acento (único elemento redondeado del sistema, radio 24) */
+.link.cta {
+  border-radius: 24px;
+  background: var(--acc);
+  border-color: var(--acc);
+  color: var(--asfalto);
+  padding: 20px 28px;
+  margin-top: 4px;
+  justify-content: center;
+  text-align: center;
+}
+.link.cta .sq { display: none; }
+.link.cta .tag { color: rgba(23,24,26,0.55); }
+.link.cta .subtitle { color: rgba(23,24,26,0.7); }
+.link.cta .title { font-size: 16px; }
+.link.cta .arrow { display: none; }
+.link.cta:hover, .link.cta:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,122,26,0.25);
+}
+
+/* ---------- Footer ---------- */
+.foot { margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--hairline); }
+
+.socials {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 8px;
+  margin-bottom: 22px;
+}
+.socials a {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--txt-2);
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid var(--hairline);
+  transition: color .18s ease, border-color .18s ease;
+}
+.socials a:hover, .socials a:focus-visible {
+  color: var(--acc);
+  border-color: var(--acc);
+  outline: none;
+}
+
+.sign {
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--txt-tag);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.sign .sq { width: 8px; height: 8px; background: var(--acc); display: inline-block; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

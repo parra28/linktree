@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@diegosandie — Enlaces</title>
+  <meta name="description" content="Entrenamiento, rutas y material. Enlaces de utilidad de @diegosandie." />
+
+  <!-- Open Graph: previsualización al compartir en historias/DM -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="@diegosandie — Enlaces" />
+  <meta property="og:description" content="Entrenamiento, rutas y material. Datos medidos, no promesas." />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fuentes del sistema DSD: Archivo + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <!-- Barra de progreso: firma visual DSD -->
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="head">
+      <div class="logo">
+        <!-- Logo oficial DSD (blanco sobre transparente para fondo asfalto).
+             Si el PNG no existe todavía, se oculta y aparece el SVG de reserva. -->
+        <img class="logo-img" src="assets/logo-white-transparent.png" alt="DSD"
+             width="72" height="72"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'" />
+        <span class="logo-fallback" aria-hidden="true">
+          <svg viewBox="0 0 64 48" width="56" height="42" role="img" aria-label="DSD">
+            <path d="M4 44 L24 10 L34 28 L40 18 L60 44 Z" fill="none" stroke="var(--crema)" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M24 10 L30 20 L27 24 L21 15 Z" fill="var(--acc)"/>
+          </svg>
+        </span>
+      </div>
+      <p class="handle" id="handle">@diegosandie</p>
+      <h1 class="name" id="name">DIEGO SÁNCHEZ</h1>
+      <p class="bio" id="bio">Entrenamiento, rutas y material.</p>
+    </header>
+
+    <nav class="links" id="links" aria-label="Enlaces"></nav>
+
+    <footer class="foot">
+      <ul class="socials" id="socials" aria-label="Redes sociales"></ul>
+      <p class="sign"><span class="sq" aria-hidden="true"></span>DSD · @diegosandie</p>
+    </footer>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
