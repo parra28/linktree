@@ -11,6 +11,12 @@
       "title": "Plan de Entrenamiento IA",
       "subtitle": "Genera tu plan de ciclismo con IA",
       "url": "https://raw.githubusercontent.com/parra28/prompt_entrenamientos/refs/heads/master/prompt_plan_ciclismo_generico.md"
+    },
+    {
+      "tag": "WEB",
+      "title": "El Garaje",
+      "subtitle": "Rutas con GPX y rutinas de gimnasio",
+      "url": "https://parra28.github.io/garage/"
     }
   ],
   "socials": [
